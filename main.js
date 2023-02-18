@@ -15,11 +15,6 @@ const server = http.createServer((req,res) => {
             fs.readdir('./data',function(err, filelist){
                 let title = 'Eternity';
                 let description = 'Realm of Eternity';
-                
-                // if(err){
-                //     res.writeHead(404, {'Content-Type': 'text/html'});
-                //     return res.end("404 Not Found");
-                // }
                 let document = template.HTML(title, 
                     `<h2>${title}</h2>${description}`);
                 res.writeHead(200);

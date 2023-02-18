@@ -5,9 +5,31 @@
     <meta charset="UTF-8">
     <title>Textbox</title>
     <script src="images.js"></script>
+    <!-- <script src="clickevent.js"></script> -->
+    <script>
+        let countV = 0;
+        window.onload=function(){
+            document.getElementById('countVresult').innerHTML = countV;
+            const e1 = document.getElementById("upvote");
+            const e2 = document.getElementById("downvote");
+            e1.addEventListener("click",plusVote,false);
+            e2.addEventListener("click",minusVote ,false);
+        }
+        function plusVote(){
+            countV++;
+            document.getElementById('countVresult').innerHTML = countV;
+            alert('(｡•̀ᴗ-)✧');  
+        }
+
+        function minusVote(){
+            countV--;
+            document.getElementById('countVresult').innerHTML = countV;
+            alert('凸(⊙▂⊙✖ ) 凸(⊙▂⊙✖ )');
+        }
+    </script>
     <style>
         body {
-            background-image: url('inazuma_region.jpg');
+            background-image: url('data/inazuma_region.jpg');
         }
         iframe {
             display: block;
@@ -25,14 +47,12 @@
 
 <body>
     <h1 style="font-size:400%">Ei is Best</h1>
-    <p>
-        <input type="button" value="Yes" style="height:30px; width:50px" onclick="setShogunMood('happy')">
-        <input type="button" value="No" style="height:30px; width:50px" onclick="setShogunMood('rage')">
-        <br> <br> <input style="width:300px; height:100px" type="text">
-    </p>
+    <button id="upvote">Yes</button>
+    <button id="downvote">No</button>
+    <div id="countVresult"></div>
 
-    <img id="shogunsama" src="Icon_Emoji_Raiden_Shogun_4.png">
-    <img src="shogun_banner.png">
+    <img id="data/shogunsama" src="data/Icon_Emoji_Raiden_Shogun_4.png">
+    <img src="data/shogun_banner.png">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/iFg-bFAu2AU" title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
